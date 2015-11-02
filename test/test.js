@@ -54,6 +54,14 @@
     equal( 3, l2.distance, 'Saturday <=> Sunday' )
   })
 
+  test('Levenshtein options', function() {
+    var l1 = new Levenshtein( 'kitten', 'sitting', {deletionCost: 1, insertionCost: 2, substractionCost: 3} )
+      , l2 = new Levenshtein( 'Saturday', 'Sunday', {deletionCost: 3, insertionCost: 2, substractionCost: 1} )
+
+    equal( 6, l1.distance, 'kitten <=> sitting' )
+    equal( 4, l2.distance, 'Saturday <=> Sunday' )
+  })
+
   test('Levenshtein can be coerced to a number', function() {
     var l1 = new Levenshtein( 'kitten', 'sitting' )
     equal( l1.distance, l1 + 0 )

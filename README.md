@@ -11,9 +11,13 @@ it has specs!
 
 ## API
 
-* `new Levenshtein( m, n )` → `Levenshtein`
+* `new Levenshtein( m, n, options )` → `Levenshtein`
     * m ( `String` ): First string.
     * n ( `String` ): Second string.
+    * options ( `Object` ): an **optional** object with the costs (if not specified, the default costs are 1):
+        * deletionCost
+        * insertionCost
+        * substractionCost 
     * Initialise a new Levenshtein object.
 
 * `Levenshtein#distance` → `Number`
